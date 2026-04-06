@@ -33,6 +33,7 @@ void loop() {
       break;
     case 's':
       Mode = 2;
+      Color = 0;
       break;
     case 'l':
       Serial.println(analogRead(Sensor));
@@ -63,11 +64,6 @@ void loop() {
       break;
     }
     Serial.println(cmd);
-  }
-  if ((Mode == 0) && !(Mode_Prev == 0)) {
-    digitalWrite(LED_R, LOW);
-    digitalWrite(LED_G, LOW);
-    digitalWrite(LED_B, LOW);
   }
   if (Mode == 1) {
     Brightness = analogRead(Sensor);
@@ -120,5 +116,6 @@ void loop() {
       digitalWrite(LED_B, HIGH);
       break;
     }
+    delay(10);
   }
 }
